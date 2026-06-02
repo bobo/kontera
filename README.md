@@ -4,6 +4,18 @@ Upload a Swedish supplier invoice (PDF). The app extracts it, proposes a balance
 double-entry **journal entry** mapped to the BAS chart of accounts, and lets an
 accountant **approve or decline** it.
 
+## Screenshots
+
+The review screen — source bill beside the editable journal entry, with per-line
+confidence, "why this account" rationale, a live balance indicator, advisory
+flags, and tags:
+
+![Review screen](docs/screenshots/02-review.png)
+
+| Upload | Ledger | Chart of accounts |
+| --- | --- | --- |
+| ![Upload](docs/screenshots/01-upload.png) | ![Ledger](docs/screenshots/03-ledger.png) | ![Chart of accounts](docs/screenshots/04-accounts.png) |
+
 ## Core design principle: the LLM never owns a number
 
 Numbers and balancing are deterministic; the LLM is used only for judgment.
