@@ -132,4 +132,13 @@ node --conditions=react-server --import tsx --env-file=.env.local scripts/test-l
   the per-rate split isn't itemized.
 - No auth / multi-user; the optimistic-lock plumbing is there but "who approved" is
   not captured.
+- **Concurrency & double-booking are only lightly guarded.** Optimistic locking
+  (`invoices.version`) keeps two reviewers from acting on a stale version of *one*
+  invoice, but two further safeguards a real financial system would want are absent:
+  (1) it does nothing to stop the *same* invoice being uploaded and booked twice —
+  that needs duplicate detection / idempotency (e.g. dedupe on supplier org-nr +
+  invoice number + gross, or an upload idempotency key); and (2) the version checks
+  aren't stress-tested under genuine concurrent access. Hardening both is the natural
+  extension and good practice for accounting software — though for a single-user,
+  single-process local tool it's arguably more rigor than this scope needs.
 - SQLite + local disk for PDFs keeps "run locally" to two commands.
