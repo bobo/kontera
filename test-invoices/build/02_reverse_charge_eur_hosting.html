@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+body { font-family: Helvetica, Arial, sans-serif; color: #1a1a1a; font-size: 10.5px; line-height: 1.45; }
+.title { text-align: right; }
+.title h1 { font-size: 30px; margin: 0; letter-spacing: 0.5px; }
+.title .page { color: #444; font-size: 10px; }
+.head { display: flex; justify-content: space-between; margin-top: 6px; }
+.logo .main { font-size: 20px; font-weight: 700; letter-spacing: 1px; }
+.logo .sub { font-size: 11px; letter-spacing: 3px; color: #333; }
+.meta { width: 46%; }
+.meta .row { display: flex; justify-content: space-between; }
+.meta .row .k { color: #333; }
+.cust { margin-top: 26px; }
+.cust .name { font-weight: 700; }
+.terms { display: flex; justify-content: space-between; margin-top: 26px; }
+.terms .box { width: 48%; }
+.terms .row { display: flex; }
+.terms .row .k { width: 130px; color: #333; }
+table.items { width: 100%; border-collapse: collapse; margin-top: 22px; }
+table.items th { text-align: left; border-bottom: 1px solid #333; padding: 4px 6px; font-weight: 600; }
+table.items td { padding: 4px 6px; vertical-align: top; }
+table.items .num { text-align: right; white-space: nowrap; }
+.totals { margin-top: 26px; border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 8px 0; }
+.totals table { width: 100%; border-collapse: collapse; }
+.totals td { padding: 3px 6px; }
+.totals .label { color: #333; font-size: 9.5px; }
+.totals .pay { text-align: right; font-weight: 700; font-size: 14px; }
+.bank { margin-top: 8px; font-size: 9.5px; color: #222; }
+.note { margin-top: 14px; font-size: 9.5px; color: #111; }
+.note.warn { padding: 6px 8px; border: 1px solid #999; background: #f6f6f6; }
+.footer { margin-top: 40px; display: flex; justify-content: space-between; font-size: 9px; color: #333; }
+.footer .col { width: 24%; }
+.footer .h { color: #777; }
+.pagebreak { page-break-before: always; }
+.receipt { max-width: 320px; font-family: 'Courier New', monospace; font-size: 11px; }
+.receipt .c { text-align: center; }
+.receipt .line { border-top: 1px dashed #555; margin: 6px 0; }
+.receipt .r { display: flex; justify-content: space-between; }
+</style><title>02_reverse_charge_eur_hosting</title></head><body>
+    <div class='title'><h1>Faktura</h1><span class='page'>Sida 1(1)</span></div>
+    <div class='head'>
+      <div class='logo'><div class='main'>HETZNER</div><div class='sub'>ONLINE</div></div>
+      <div class='meta'>
+        <div class='row'><span class='k'>Fakturadatum</span><span>2026-04-30</span></div>
+        <div class='row'><span class='k'>Fakturanr</span><span>R0049928171</span></div>
+        
+        <div class="row"><span class="k">Valuta</span><span>EUR</span></div>
+      </div>
+    </div>
+    <div class='cust'><div class='name'>Bright IT Solutions AB</div>Att: Ekonomiavdelningen, Teknikgatan 14<br>115 34 STOCKHOLM<br>Sverige</div>
+    <div class='terms'>
+      <div class='box'><div class='row'><span class='k'>Kundnr</span><span>—</span></div></div>
+      <div class='box'>
+        <div class='row'><span class='k'>Betalningsvillkor</span><span>14 dagar</span></div>
+        <div class='row'><span class='k'>Förfallodatum</span><span>2026-05-15</span></div>
+        <div class='row'><span class='k'>Dröjsmålsränta</span><span>—</span></div>
+      </div>
+    </div>
+    <table class='items'><thead><tr><th>Artnr</th><th>Benämning</th><th class='num'>Antal</th><th class='num'>Á-pris</th><th class='num'>Summa</th></tr></thead><tbody><tr><td>1</td><td>Dedicated Server EX44 (monthly)</td><td class='num'>1,00</td><td class='num'>49,00</td><td class='num'>49,00</td></tr><tr><td>2</td><td>Additional IPv4 address</td><td class='num'>1,00</td><td class='num'>1,70</td><td class='num'>1,70</td></tr><tr><td>3</td><td>Traffic overage 2 TB</td><td class='num'>1,00</td><td class='num'>2,00</td><td class='num'>2,00</td></tr><tr><td>4</td><td>One-time setup fee</td><td class='num'>1,00</td><td class='num'>39,00</td><td class='num'>39,00</td></tr></tbody></table><div class='totals'><table><tr><td class='label'>Exkl. moms</td><td class='label'>Moms 0%</td><td class='label'>Totalt</td><td class='label' style='text-align:right'>ATT BETALA</td></tr><tr><td>91,70</td><td>0,00</td><td>91,70</td><td class='pay'>EUR 91,70</td></tr></table></div><div class='note warn'><b>Reverse charge</b> — VAT to be accounted for by the recipient. Steuerschuldnerschaft des Leistungsempfängers. Customer VAT ID: SE559201487301. Net amount EUR — no German VAT charged.</div>
+    <div class="footer">
+      <div class="col"><div class="h">Adress</div>Hetzner Online GmbH<br>Industriestr. 25<br>91710 Gunzenhausen<br>Tyskland / Germany</div>
+      <div class="col"><div class="h">Telefon</div>+49 9831 5050<div class="h" style="margin-top:8px">E-post</div>invoice@hetzner.com</div>
+      <div class="col"><div class="h">Bankgiro</div>-</div>
+      <div class="col"><div class="h">Registernr</div>HRB 6089 Ansbach<div class="h" style="margin-top:8px">Momsreg. nr</div>DE812871812<div style="margin-top:8px"></div></div>
+    </div></body></html>

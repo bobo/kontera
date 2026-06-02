@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+body { font-family: Helvetica, Arial, sans-serif; color: #1a1a1a; font-size: 10.5px; line-height: 1.45; }
+.title { text-align: right; }
+.title h1 { font-size: 30px; margin: 0; letter-spacing: 0.5px; }
+.title .page { color: #444; font-size: 10px; }
+.head { display: flex; justify-content: space-between; margin-top: 6px; }
+.logo .main { font-size: 20px; font-weight: 700; letter-spacing: 1px; }
+.logo .sub { font-size: 11px; letter-spacing: 3px; color: #333; }
+.meta { width: 46%; }
+.meta .row { display: flex; justify-content: space-between; }
+.meta .row .k { color: #333; }
+.cust { margin-top: 26px; }
+.cust .name { font-weight: 700; }
+.terms { display: flex; justify-content: space-between; margin-top: 26px; }
+.terms .box { width: 48%; }
+.terms .row { display: flex; }
+.terms .row .k { width: 130px; color: #333; }
+table.items { width: 100%; border-collapse: collapse; margin-top: 22px; }
+table.items th { text-align: left; border-bottom: 1px solid #333; padding: 4px 6px; font-weight: 600; }
+table.items td { padding: 4px 6px; vertical-align: top; }
+table.items .num { text-align: right; white-space: nowrap; }
+.totals { margin-top: 26px; border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 8px 0; }
+.totals table { width: 100%; border-collapse: collapse; }
+.totals td { padding: 3px 6px; }
+.totals .label { color: #333; font-size: 9.5px; }
+.totals .pay { text-align: right; font-weight: 700; font-size: 14px; }
+.bank { margin-top: 8px; font-size: 9.5px; color: #222; }
+.note { margin-top: 14px; font-size: 9.5px; color: #111; }
+.note.warn { padding: 6px 8px; border: 1px solid #999; background: #f6f6f6; }
+.footer { margin-top: 40px; display: flex; justify-content: space-between; font-size: 9px; color: #333; }
+.footer .col { width: 24%; }
+.footer .h { color: #777; }
+.pagebreak { page-break-before: always; }
+.receipt { max-width: 320px; font-family: 'Courier New', monospace; font-size: 11px; }
+.receipt .c { text-align: center; }
+.receipt .line { border-top: 1px dashed #555; margin: 6px 0; }
+.receipt .r { display: flex; justify-content: space-between; }
+</style><title>01_mixed_vat_25_12</title></head><body>
+    <div class='title'><h1>Faktura</h1><span class='page'>Sida 1(1)</span></div>
+    <div class='head'>
+      <div class='logo'><div class='main'>KONTORSBODEN</div><div class='sub'>AB</div></div>
+      <div class='meta'>
+        <div class='row'><span class='k'>Fakturadatum</span><span>2026-03-18</span></div>
+        <div class='row'><span class='k'>Fakturanr</span><span>240331</span></div>
+        
+        
+      </div>
+    </div>
+    <div class='cust'><div class='name'>Bright IT Solutions AB</div>Att: Ekonomiavdelningen, Teknikgatan 14<br>115 34 STOCKHOLM<br>Sverige</div>
+    <div class='terms'>
+      <div class='box'><div class='row'><span class='k'>Kundnr</span><span>—</span></div></div>
+      <div class='box'>
+        <div class='row'><span class='k'>Betalningsvillkor</span><span>30 dagar</span></div>
+        <div class='row'><span class='k'>Förfallodatum</span><span>2026-04-17</span></div>
+        <div class='row'><span class='k'>Dröjsmålsränta</span><span>8%</span></div>
+      </div>
+    </div>
+    <table class='items'><thead><tr><th>Artnr</th><th>Benämning</th><th class='num'>Antal</th><th class='num'>Á-pris</th><th class='num'>Summa</th></tr></thead><tbody><tr><td>1</td><td>Kopieringspapper A4 80g (fp om 500)</td><td class='num'>10,00</td><td class='num'>89,00</td><td class='num'>890,00</td></tr><tr><td>2</td><td>Whiteboardpennor sortiment</td><td class='num'>20,00</td><td class='num'>15,00</td><td class='num'>300,00</td></tr><tr><td>3</td><td>Smörgåstårta personalmöte 20 pers</td><td class='num'>1,00</td><td class='num'>1 200,00</td><td class='num'>1 200,00</td></tr><tr><td>4</td><td>Kaffebönor Mellanrost 1 kg</td><td class='num'>6,00</td><td class='num'>150,00</td><td class='num'>900,00</td></tr></tbody></table><div class='totals'><table><tr><td class='label'>Exkl. moms</td><td class='label'>Moms 25%</td><td class='label'>Moms 12%</td><td class='label'>Totalt</td><td class='label' style='text-align:right'>ATT BETALA</td></tr><tr><td>3 290,00</td><td>297,50</td><td>252,00</td><td>3 839,50</td><td class='pay'>SEK 3 839,50</td></tr></table></div><div class='note'>Moms specificeras per momssats. Livsmedel debiteras 12% (faktura före 2026-04-01).</div>
+    <div class="footer">
+      <div class="col"><div class="h">Adress</div>Kontorsboden i Sverige AB<br>Lagervägen 22<br>120 30 Stockholm<br>Sverige</div>
+      <div class="col"><div class="h">Telefon</div>08-556 200 10<div class="h" style="margin-top:8px">E-post</div>faktura@kontorsboden.se</div>
+      <div class="col"><div class="h">Bankgiro</div>5810-1122</div>
+      <div class="col"><div class="h">Organisationsnr</div>556712-9087<div class="h" style="margin-top:8px">Momsreg. nr</div>SE556712908701<div style="margin-top:8px">Godkänd för F-skatt</div></div>
+    </div></body></html>

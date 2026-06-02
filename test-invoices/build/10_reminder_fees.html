@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+body { font-family: Helvetica, Arial, sans-serif; color: #1a1a1a; font-size: 10.5px; line-height: 1.45; }
+.title { text-align: right; }
+.title h1 { font-size: 30px; margin: 0; letter-spacing: 0.5px; }
+.title .page { color: #444; font-size: 10px; }
+.head { display: flex; justify-content: space-between; margin-top: 6px; }
+.logo .main { font-size: 20px; font-weight: 700; letter-spacing: 1px; }
+.logo .sub { font-size: 11px; letter-spacing: 3px; color: #333; }
+.meta { width: 46%; }
+.meta .row { display: flex; justify-content: space-between; }
+.meta .row .k { color: #333; }
+.cust { margin-top: 26px; }
+.cust .name { font-weight: 700; }
+.terms { display: flex; justify-content: space-between; margin-top: 26px; }
+.terms .box { width: 48%; }
+.terms .row { display: flex; }
+.terms .row .k { width: 130px; color: #333; }
+table.items { width: 100%; border-collapse: collapse; margin-top: 22px; }
+table.items th { text-align: left; border-bottom: 1px solid #333; padding: 4px 6px; font-weight: 600; }
+table.items td { padding: 4px 6px; vertical-align: top; }
+table.items .num { text-align: right; white-space: nowrap; }
+.totals { margin-top: 26px; border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 8px 0; }
+.totals table { width: 100%; border-collapse: collapse; }
+.totals td { padding: 3px 6px; }
+.totals .label { color: #333; font-size: 9.5px; }
+.totals .pay { text-align: right; font-weight: 700; font-size: 14px; }
+.bank { margin-top: 8px; font-size: 9.5px; color: #222; }
+.note { margin-top: 14px; font-size: 9.5px; color: #111; }
+.note.warn { padding: 6px 8px; border: 1px solid #999; background: #f6f6f6; }
+.footer { margin-top: 40px; display: flex; justify-content: space-between; font-size: 9px; color: #333; }
+.footer .col { width: 24%; }
+.footer .h { color: #777; }
+.pagebreak { page-break-before: always; }
+.receipt { max-width: 320px; font-family: 'Courier New', monospace; font-size: 11px; }
+.receipt .c { text-align: center; }
+.receipt .line { border-top: 1px dashed #555; margin: 6px 0; }
+.receipt .r { display: flex; justify-content: space-between; }
+</style><title>10_reminder_fees</title></head><body>
+    <div class='title'><h1>Betalningspåminnelse</h1><span class='page'>Sida 1(1)</span></div>
+    <div class='head'><div class='logo'><div class='main'>BRIGHT IT</div><div class='sub'>SOLUTIONS</div></div>
+    <div class='meta'>
+      <div class='row'><span class='k'>Datum</span><span>2026-05-11</span></div>
+      <div class='row'><span class='k'>Påminnelsenr</span><span>P-1047</span></div>
+      <div class='row'><span class='k'>Avser faktura</span><span>1047</span></div>
+    </div></div>
+    <div class='cust'><div class='name'>Kallberg & Partners AB</div>Erik Kallberg, Storgatan 8<br>413 01 GÖTEBORG<br>Sverige</div>
+    <table class='items'><thead><tr><th>Artnr</th><th>Benämning</th><th class='num'>Antal</th><th class='num'>Á-pris</th><th class='num'>Summa</th></tr></thead><tbody><tr><td></td><td>Ursprunglig faktura 1047 (förfallen)</td><td class='num'></td><td class='num'></td><td class='num'>116 875,00</td></tr><tr><td></td><td>Påminnelseavgift</td><td class='num'></td><td class='num'></td><td class='num'>60,00</td></tr><tr><td></td><td>Dröjsmålsränta 8% (32 dagar)</td><td class='num'></td><td class='num'></td><td class='num'>819,45</td></tr></tbody></table>
+    <div class='totals'><table>
+      <tr><td class='label'>Förfallet fakturabelopp</td><td class='label'>Påminnelseavgift</td><td class='label'>Dröjsmålsränta</td><td class='label' style='text-align:right'>ATT BETALA</td></tr>
+      <tr><td>116 875,00</td><td>60,00</td><td>819,45</td><td class='pay'>SEK 117 754,45</td></tr>
+    </table></div>
+    <div class='note'>Påminnelseavgift och dröjsmålsränta är ej momspliktiga. Endast avgiften och räntan är nya kostnader — "
+    "ursprungsfakturan ska inte bokföras två gånger.</div>
+    
+    <div class="footer">
+      <div class="col"><div class="h">Adress</div>Bright IT Solutions AB<br>Teknikgatan 14<br>115 34 Stockholm<br>Sverige</div>
+      <div class="col"><div class="h">Telefon</div>08-331 045 00<div class="h" style="margin-top:8px">E-post</div>faktura@brightit.se</div>
+      <div class="col"><div class="h">Bankgiro</div>731-2045</div>
+      <div class="col"><div class="h">Organisationsnr</div>559201-4873<div class="h" style="margin-top:8px">Momsreg. nr</div>SE559201487301<div style="margin-top:8px">Godkänd för F-skatt</div></div>
+    </div>
+    </body></html>

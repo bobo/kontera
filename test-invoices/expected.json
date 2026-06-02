@@ -1,0 +1,481 @@
+{
+  "description": "Answer-key journal entries for the hard test invoices. Synthetic data.",
+  "assumptions": {
+    "fx_rates_sek_per_unit": {
+      "EUR": 11.3,
+      "USD": 10.5
+    },
+    "fx_note": "Foreign-currency invoices were computed with these rates; a real app should use the Riksbank rate at the invoice date.",
+    "vat_note": "Standard 25%, reduced 12%/6%. Food temporarily 6% from 2026-04-01 (was 12%).",
+    "accounts_outside_chart": "2614 (output VAT reverse charge) and 8420 (interest) are required by correct accounting but are NOT in the provided 20-account chart."
+  },
+  "invoices": [
+    {
+      "id": "01",
+      "file": "01_mixed_vat_25_12.pdf",
+      "currency": "SEK",
+      "fx_rate_to_sek": null,
+      "invoice_total": 3839.5,
+      "accounts_outside_provided_chart": null,
+      "review_flags": [],
+      "notes": "Two VAT rates collapse into one 2640 posting.",
+      "journal_entry": [
+        {
+          "account": "5610",
+          "name": "Kontorsmaterial",
+          "debit": 1190.0,
+          "credit": 0.0
+        },
+        {
+          "account": "7631",
+          "name": "Personalmat & fika",
+          "debit": 2100.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": 549.5,
+          "credit": 0.0
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": 3839.5
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "file": "02_reverse_charge_eur_hosting.pdf",
+      "currency": "EUR",
+      "fx_rate_to_sek": 11.3,
+      "invoice_total": 91.7,
+      "accounts_outside_provided_chart": [
+        "2614"
+      ],
+      "review_flags": [
+        "reverse_charge",
+        "fx_conversion"
+      ],
+      "notes": "0% VAT on the invoice; buyer self-assesses 25% Swedish VAT both ways. 2614 not in provided chart.",
+      "journal_entry": [
+        {
+          "account": "6540",
+          "name": "IT-drift & hosting",
+          "debit": 1036.21,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": 259.05,
+          "credit": 0.0
+        },
+        {
+          "account": "2614",
+          "name": "Utgående moms omvänd skattskyldighet",
+          "debit": 0.0,
+          "credit": 259.05
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": 1036.21
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "file": "03_reverse_charge_usd_saas.pdf",
+      "currency": "USD",
+      "fx_rate_to_sek": 10.5,
+      "invoice_total": 480.0,
+      "accounts_outside_provided_chart": [
+        "2614"
+      ],
+      "review_flags": [
+        "reverse_charge",
+        "fx_conversion",
+        "already_paid"
+      ],
+      "notes": "Paid by card so credit side is 1930, not 2440. Reverse charge VAT pair.",
+      "journal_entry": [
+        {
+          "account": "6570",
+          "name": "Programvara, licenser",
+          "debit": 5040.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": 1260.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2614",
+          "name": "Utgående moms omvänd skattskyldighet",
+          "debit": 0.0,
+          "credit": 1260.0
+        },
+        {
+          "account": "1930",
+          "name": "Företagskonto",
+          "debit": 0.0,
+          "credit": 5040.0
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "file": "04_rounding_telecom.pdf",
+      "currency": "SEK",
+      "fx_rate_to_sek": null,
+      "invoice_total": 1215.93,
+      "accounts_outside_provided_chart": null,
+      "review_flags": [
+        "rounding_line"
+      ],
+      "notes": "Öresavrundning -0,32 plugged to 5690 (3740 would be ideal but is not in chart).",
+      "journal_entry": [
+        {
+          "account": "6211",
+          "name": "Fast telefoni",
+          "debit": 249.0,
+          "credit": 0.0
+        },
+        {
+          "account": "6230",
+          "name": "Datakommunikation",
+          "debit": 724.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": 243.25,
+          "credit": 0.0
+        },
+        {
+          "account": "5690",
+          "name": "Övriga kontorskostnader",
+          "debit": -0.32,
+          "credit": 0.0
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": 1215.93
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "file": "05_inclusive_receipt.pdf",
+      "currency": "SEK",
+      "fx_rate_to_sek": null,
+      "invoice_total": 624.5,
+      "accounts_outside_provided_chart": null,
+      "review_flags": [
+        "vat_inclusive_pricing",
+        "already_paid"
+      ],
+      "notes": "Prices include 25% VAT; net and VAT back-calculated from the gross 624,50.",
+      "journal_entry": [
+        {
+          "account": "5410",
+          "name": "Förbrukningsinventarier",
+          "debit": 359.2,
+          "credit": 0.0
+        },
+        {
+          "account": "5460",
+          "name": "Förbrukningsmaterial",
+          "debit": 140.4,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": 124.9,
+          "credit": 0.0
+        },
+        {
+          "account": "1930",
+          "name": "Företagskonto",
+          "debit": 0.0,
+          "credit": 624.5
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "file": "06_credit_note.pdf",
+      "currency": "SEK",
+      "fx_rate_to_sek": null,
+      "invoice_total": -12500.0,
+      "accounts_outside_provided_chart": null,
+      "review_flags": [
+        "credit_note"
+      ],
+      "notes": "All amounts negative; effectively credit 6530/2640 and debit 2440.",
+      "journal_entry": [
+        {
+          "account": "6530",
+          "name": "IT-tjänster",
+          "debit": -10000.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": -2500.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": -12500.0
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "file": "07_multipage_hardware.pdf",
+      "currency": "SEK",
+      "fx_rate_to_sek": null,
+      "invoice_total": 112185.0,
+      "accounts_outside_provided_chart": null,
+      "review_flags": [
+        "multi_page",
+        "no_freight_account"
+      ],
+      "notes": "17 lines across 2 pages aggregated into few accounts; freight -> 5690.",
+      "journal_entry": [
+        {
+          "account": "5410",
+          "name": "Förbrukningsinventarier",
+          "debit": 68966.0,
+          "credit": 0.0
+        },
+        {
+          "account": "5460",
+          "name": "Förbrukningsmaterial",
+          "debit": 2787.0,
+          "credit": 0.0
+        },
+        {
+          "account": "6570",
+          "name": "Programvara, licenser",
+          "debit": 17600.0,
+          "credit": 0.0
+        },
+        {
+          "account": "5690",
+          "name": "Övriga kontorskostnader",
+          "debit": 395.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": 22437.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": 112185.0
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "file": "08_advertising_no_account_eur.pdf",
+      "currency": "EUR",
+      "fx_rate_to_sek": 11.3,
+      "invoice_total": 842.55,
+      "accounts_outside_provided_chart": [
+        "2614"
+      ],
+      "review_flags": [
+        "reverse_charge",
+        "fx_conversion",
+        "no_matching_account",
+        "low_confidence"
+      ],
+      "notes": "Advertising/marketing absent from chart -> 5690 with low confidence. Plus EUR + reverse charge.",
+      "journal_entry": [
+        {
+          "account": "5690",
+          "name": "Övriga kontorskostnader",
+          "debit": 9520.82,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": 2380.2,
+          "credit": 0.0
+        },
+        {
+          "account": "2614",
+          "name": "Utgående moms omvänd skattskyldighet",
+          "debit": 0.0,
+          "credit": 2380.2
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": 9520.82
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "file": "09_insurance_vat_exempt.pdf",
+      "currency": "SEK",
+      "fx_rate_to_sek": null,
+      "invoice_total": 10800.0,
+      "accounts_outside_provided_chart": null,
+      "review_flags": [
+        "vat_exempt"
+      ],
+      "notes": "Insurance is VAT-exempt (3 kap. 10 § ML). NO input VAT, NOT reverse charge. The discriminator vs 02/03/08.",
+      "journal_entry": [
+        {
+          "account": "6310",
+          "name": "Företagsförsäkringar",
+          "debit": 10800.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": 10800.0
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "file": "10_reminder_fees.pdf",
+      "currency": "SEK",
+      "fx_rate_to_sek": null,
+      "invoice_total": 879.45,
+      "accounts_outside_provided_chart": [
+        "8420"
+      ],
+      "review_flags": [
+        "do_not_rebook_original",
+        "vat_free_fees"
+      ],
+      "notes": "The 116 875 original invoice must NOT be booked again. Only fee + interest are new costs, both VAT-free.",
+      "journal_entry": [
+        {
+          "account": "5690",
+          "name": "Övriga kontorskostnader",
+          "debit": 60.0,
+          "credit": 0.0
+        },
+        {
+          "account": "8420",
+          "name": "Räntekostnader (EJ i tillhandahållen kontoplan)",
+          "debit": 819.45,
+          "credit": 0.0
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": 879.45
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "file": "11_reduced_6pct_and_food_change.pdf",
+      "currency": "SEK",
+      "fx_rate_to_sek": null,
+      "invoice_total": 4653.4,
+      "accounts_outside_provided_chart": null,
+      "review_flags": [
+        "reduced_vat_6pct",
+        "food_vat_change_2026"
+      ],
+      "notes": "Books 6%; food dated 2026-04-15 is 6% under the temporary 2026 cut (was 12%).",
+      "journal_entry": [
+        {
+          "account": "5610",
+          "name": "Kontorsmaterial",
+          "debit": 3490.0,
+          "credit": 0.0
+        },
+        {
+          "account": "7631",
+          "name": "Personalmat & fika",
+          "debit": 900.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": 263.4,
+          "credit": 0.0
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": 4653.4
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "file": "12_scanned_image_only.pdf",
+      "currency": "SEK",
+      "fx_rate_to_sek": null,
+      "invoice_total": 3839.5,
+      "accounts_outside_provided_chart": null,
+      "review_flags": [
+        "no_text_layer",
+        "requires_ocr_or_vision"
+      ],
+      "notes": "Image-only scan of invoice 01; expected entry is identical once OCR/vision recovers the content.",
+      "journal_entry": [
+        {
+          "account": "5610",
+          "name": "Kontorsmaterial",
+          "debit": 1190.0,
+          "credit": 0.0
+        },
+        {
+          "account": "7631",
+          "name": "Personalmat & fika",
+          "debit": 2100.0,
+          "credit": 0.0
+        },
+        {
+          "account": "2640",
+          "name": "Ingående moms",
+          "debit": 549.5,
+          "credit": 0.0
+        },
+        {
+          "account": "2440",
+          "name": "Leverantörsskulder",
+          "debit": 0.0,
+          "credit": 3839.5
+        }
+      ]
+    }
+  ]
+}
