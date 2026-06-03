@@ -11,7 +11,7 @@
  */
 export const ROUNDING_TOLERANCE_ORE = 50;
 
-/** Parse a Swedish-formatted amount ("50 000,00", "1 250,00", "8%") to öre. */
+/** Parse a Swedish-formatted amount ("50 000,00", "1 250,00", "-500,50") to öre. */
 export function parseSekToOre(raw: string): number | null {
   const cleaned = raw
     .replace(/ /g, " ")
